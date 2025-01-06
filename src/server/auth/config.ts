@@ -38,13 +38,8 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 
-console.log('env.NEXTAUTH_URL', env.NEXTAUTH_URL);
-
 export const authConfig = {
-  providers: [
-    GoogleProvider,
-  ],
-  basePath: env.NEXTAUTH_URL,
+  providers: [GoogleProvider],
   adapter: DrizzleAdapter(db, {
     usersTable: users,
     accountsTable: accounts,
